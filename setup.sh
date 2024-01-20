@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function install_omz_plugins() {
 	if [[ ! -d $HOME/zsh-syntax-highlighting ]]; then
 		echo "Installing zsh-syntax-highlighting"
@@ -9,6 +11,7 @@ function install_omz_plugins() {
 }
 
 if [[ ! -f $HOME/.vimrc ]]; then
+	mkdir -p $HOME/.vim/undodir
 	ln -sfn $HOME/.dotfiles/.vimrc $HOME/.vimrc
 fi
 
